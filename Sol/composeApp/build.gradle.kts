@@ -29,6 +29,9 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            implementation("org.osmdroid:osmdroid-android:6.1.20")
+            implementation("androidx.preference:preference-ktx:1.2.1")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
