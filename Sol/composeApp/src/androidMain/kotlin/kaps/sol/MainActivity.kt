@@ -17,7 +17,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
-
+// hej
 class MainActivity : ComponentActivity() {
 
     private val LOCATION_PERMISSIONS = arrayOf(
