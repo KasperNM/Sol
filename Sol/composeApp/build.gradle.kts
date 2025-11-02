@@ -14,7 +14,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -24,15 +24,21 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
 
+            // 🗺️ Kort
             implementation("org.osmdroid:osmdroid-android:6.1.20")
             implementation("androidx.preference:preference-ktx:1.2.1")
+
+            // 🌍 Netværk + JSON parsing
+            implementation("com.squareup.okhttp3:okhttp:4.12.0")
+            implementation("org.json:json:20240303")
         }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -43,12 +49,12 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
         }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
     }
 }
-
 android {
     namespace = "kaps.sol"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
